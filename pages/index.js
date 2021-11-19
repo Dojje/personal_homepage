@@ -35,6 +35,18 @@ export default function Home() {
         </p>
       </div>
     </div>
+    <div className={styles.stuffdone}>
+      <h1>Things i&apos;ve done</h1>
+      <h2>here are things i have done</h2>
+    </div>
+
+    {/* <div className={styles.socials}>
+      <h1>Socials</h1>
+    </div> */}
+
+    <footer className={styles.footer}>
+
+    </footer>
   </>)
 }
 
