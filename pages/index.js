@@ -1,10 +1,33 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/home.module.scss'
+import { useEffect, useState } from "react";
 
 // import pfp from '../public/images/pfp.svg'
 
 export default function Home() {
+  const [ daysAlive, setDaysAlive ] = useState()
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+
+    var ms_alive = (Date.now() - Date.parse("29 Jan 2007 GMT +0100"));
+    var days_alive = ms_alive / 1000 / 60 / 60 / 24;
+
+
+    setDaysAlive(Math.floor(days_alive))
+    setIsLoading(false)
+
+  }, [])
+
+  if (isLoading) {
+    return <p>Loading....</p>
+  }
+  if (!daysAlive) {
+    return <p>No List to show</p>
+  }
+
+
   return (<>
     <Head>  
 
@@ -12,12 +35,14 @@ export default function Home() {
     <div className={styles.hero}>
       <div className={styles.middlepart}>
         <div className={styles.pfp}>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element*/}
+          <img
             src="https://i.imgur.com/gbJnQDb.png"
             width="400"
             height="400"
             alt="cool cat pfp"
           />
+            
         </div>
 
         <div className={styles.bio}>
@@ -31,18 +56,13 @@ export default function Home() {
     <div className={styles.under}>
       <div className={styles.survival}>
         <p>
-          Daniel has survived {getAge()}&nbsp;days
+          Daniel has survived {daysAlive}&nbsp;days
         </p>
       </div>
     </div>
-    <div className={styles.stuffdone}>
-      <h1>Things i&apos;ve done</h1>
-      <h2>here are things i have done</h2>
-    </div>
 
-    {/* <div className={styles.socials}>
-      <h1>Socials</h1>
-    </div> */}
+
+    {section("Things i've done", "here are things i have done", <><h3>penis</h3> </>, styles.stuffdone)}
 
     <footer className={styles.footer}>
 
@@ -50,9 +70,18 @@ export default function Home() {
   </>)
 }
 
-function getAge() {
-  var ms_alive = (Date.now() - Date.parse("29 Jan 2007 GMT +0100"));
-  var days_alive = ms_alive / 1000 / 60 / 60 / 24;
-
-  return Math.floor(days_alive)
+function section(header, subheader, content, classname) {
+  return (<>
+    <div className={classname}>
+      <h1>{header}</h1>
+      <h2>{subheader}</h2>
+      {content}
+    </div>
+  </>)
 }
+
+
+const myLoader = ({ src }) => {
+  return `${src}`
+}
+
