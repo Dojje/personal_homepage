@@ -1,8 +1,10 @@
-import Head from 'next/head'
 import styles from '../styles/home.module.scss'
 import { useEffect, useState } from "react";
 
+
 // import pfp from '../public/images/pfp.svg'
+
+
 
 export default function Home() {
   const [ daysAlive, setDaysAlive ] = useState()
@@ -24,14 +26,11 @@ export default function Home() {
     return <p>Loading....</p>
   }
   if (!daysAlive) {
-    return <p>No List to show</p>
+    return <p>Daniel has lived for an unknown amount of day</p>
   }
 
 
   return (<>
-    <Head>  
-
-    </Head>
     <div className={styles.hero}>
       <div className={styles.middlepart}>
         <div className={styles.pfp}>
@@ -62,7 +61,10 @@ export default function Home() {
     </div>
 
 
-    {section("Things i've done", "here are things i have done", <><h3>penis</h3> </>, styles.stuffdone)}
+    {section(
+      "Things i've done", "here are things i have done",
+      <><h3>your mom</h3> </>, styles.stuffdone
+      )}
 
     <footer className={styles.footer}>
 
