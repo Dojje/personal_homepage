@@ -1,35 +1,20 @@
 import styles from '../styles/home.module.scss'
 import { useEffect, useState } from "react";
 
+import React from 'react'
 
-// import pfp from '../public/images/pfp.svg'
+class DaysAlive extends React.Component {
 
-
+  render() {
+    return(<div className={styles.survival}>
+    <p>
+      Daniel has survived {getDaysAlive()}&nbsp;days
+    </p>
+  </div>)
+  }
+}
 
 export default function Home() {
-  const [ daysAlive, setDaysAlive ] = useState()
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    setIsLoading(true)
-
-    var ms_alive = (Date.now() - Date.parse("29 Jan 2007 GMT +0100"));
-    var days_alive = ms_alive / 1000 / 60 / 60 / 24;
-
-
-    setDaysAlive(Math.floor(days_alive))
-    setIsLoading(false)
-
-  }, [])
-
-  if (isLoading) {
-    return <p>Loading....</p>
-  }
-  if (!daysAlive) {
-    return <p>Daniel has lived for an unknown amount of day</p>
-  }
-
-
   return (<>
     <div className={styles.hero}>
       <div className={styles.middlepart}>
@@ -53,14 +38,8 @@ export default function Home() {
     </div>
 
     <div className={styles.under}>
-      <div className={styles.survival}>
-        <p>
-          Daniel has survived {daysAlive}&nbsp;days
-        </p>
-      </div>
+      <DaysAlive/>
     </div>
-
-
     {section(
       "Things i've done", "here are things i have done",
       <><h3>your mom</h3> </>, styles.stuffdone
@@ -80,6 +59,13 @@ function section(header, subheader, content, classname) {
       {content}
     </div>
   </>)
+}
+
+function getDaysAlive() {
+  var ms_alive = (Date.now() - Date.parse("29 Jan 2007 GMT +0100"));
+  var days_alive = ms_alive / 1000 / 60 / 60 / 24;
+
+  return Math.floor(days_alive);
 }
 
 
