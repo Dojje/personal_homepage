@@ -76,34 +76,72 @@ class YungeLeanVideo extends React.Component {
   }
 }
 
+class YungLeanButton extends React.Component {
+
+
+  render() {
+
+    const switchJacketState = () => {
+      if (this.props.jacketState == "on") {
+        this.props.setJacketState("remove");
+      }
+      else if (this.props.jacketState == "off") {
+        this.props.setJacketState("install");
+      }
+    }
+
+    if (this.props.jacketState == "off") {
+      return <button className={styles.yungLeanButtonBright} onClick={switchJacketState}>{JACKET_ON_TEXT}</button>;
+    }
+    else if (this.props.jacketState == "on") {
+      return <button className={styles.yungLeanButtonBright} onClick={switchJacketState}>{JACKET_OFF_TEXT}</button>;
+    }
+    else if (this.props.jacketState == "remove") {
+      return <button className={styles.yungLeanButtonDark} onClick={switchJacketState}>{JACKET_ON_TEXT}</button>;
+    }
+    else if (this.props.jacketState == "install") {
+      return <button className={styles.yungLeanButtonDark} onClick={switchJacketState}>{JACKET_OFF_TEXT}</button>;
+    }
+
+  }
+}
+
+const JACKET_ON_TEXT = "Put on Jacket";
+const JACKET_OFF_TEXT = "Remove Jacket";
+
+
 function YungLean() {
-  const [jacketState, setjacketState] = useState("off");
+  const [jacketState, setJacketState] = useState("off");
+
   useEffect(() => {
     if (jacketState == "install") {
-      setTimeout(function(){ setjacketState("on"); }, 1935);
+      setTimeout(function(){
+        setJacketState("on");
+      }, 1935);
     }
     else if (jacketState == "remove") {
-      setTimeout(function(){ setjacketState("off"); }, 2402);
+      setTimeout(function(){
+        setJacketState("off");
+      }, 2402);
     }
 
   }, [jacketState]);
 
-  const switchJacketState = () => {
-    if (jacketState == "on") {
-      setjacketState("remove");
-    }
-    else if (jacketState == "off") {
-      setjacketState("install");
-    }
-  }
-
   return(<>
     <body className={styles.body}></body>
+    <div className={styles.cache_purposes}>
+      this is here so that it can load images from cache
+      <JacketOff />
+      <JacketOn />
+      <JacketRemove />
+      <JacketInstall />
+    </div>
     <div className={styles.content}>
       <div className={styles.yungleanVideo}>
         <YungeLeanVideo jacketState={jacketState} />
       </div>
-      <button className={styles.controls} onClick={switchJacketState}>Put on Jacket</button>
+      <YungLeanButton jacketState={jacketState} setJacketState={setJacketState}/>
+
     </div>
   </>)
 }

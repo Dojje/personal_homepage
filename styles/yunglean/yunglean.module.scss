@@ -1,8 +1,8 @@
-$textColor: #eff;
+$textColor: hsl(180, 100%, 97%);
+$textColorDark: hsl(0, 0%, 55%);
 
-$foregroundPrimaryDark: hsl(351, 35%, 45%);
-$foregroundPrimary: hsl(351, 35%, 55%);
-$foregroundSecondary: hsl(224, 35%, 55%);
+$foregroundPrimaryDark: hsl(351, 35%, 30%);
+$foregroundPrimary: hsl(351, 35%, 50%);
 
 $backgroundSecondary: #29231f;
 $backgroundPrimary: #1d1916;
@@ -10,8 +10,29 @@ $backgroundPrimary: #1d1916;
 $contentWidth: 480px;
 $contentHeight: 480px;
 
+@mixin yungLeanButton {
+  border: 0;
+
+  // border-style: solid;
+  // border-width: 5px;
+  // border-color: $foregroundPrimaryDark;
+
+  padding: 40px 0;
+  margin: 20px 10px;
+  border-radius: 20px;
 
 
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.cache_purposes {
+  display: none;
+}
 
 .body {
   height: 100%;
@@ -30,56 +51,49 @@ $contentHeight: 480px;
 
 
 .content {
-    margin: 100px;
-    display: flex;
-    flex-direction: column;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
 
-    max-width: 100%;
-    border-collapse: separate;
-
-    .yungleanVideo {
-
-        width: $contentWidth;
-        height: $contentWidth;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        video {
-            object-fit: cover;
-            border-radius: 15px;
-        }
-    }
-
-    .controls {
-        border-style: solid;
-        border-width: 5px;
-        border-color: $foregroundPrimaryDark;
-
-        padding: 40px 0;
-        margin: 20px 10px;
-        border-radius: 20px;
-        background-color: $foregroundPrimary;
-
-        text-align: center;
-        font-size: 30px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: $textColor;
-
-        user-select: none;
-        cursor: pointer;
-    }
+  max-width: 100%;
+  border-collapse: separate;
 
 }
 
-@media screen and (max-width: 480px) {    
-    .content {
-        height: 100%;
-    }
+.yungleanVideo {
 
-    .controls {
-        flex-direction: column;
-    }
+  width: $contentWidth;
+  height: $contentWidth;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  video {
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+
+.yungLeanButtonBright {
+  @include yungLeanButton;
+  background-color: $foregroundPrimary;
+  color: $textColor;
+}
+
+.yungLeanButtonDark {
+  @include yungLeanButton;
+  background-color: $foregroundPrimaryDark;
+  color: $textColorDark;
+}
+
+@media screen and (max-width: 480px) {    
+  .content {
+      height: 100%;
+  }
+
+  .controls {
+      flex-direction: column;
+  }
 
 }
