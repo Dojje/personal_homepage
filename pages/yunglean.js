@@ -1,5 +1,7 @@
 import styles from '../styles/yunglean/yunglean.module.scss';
 import React, {useState, useEffect} from 'react';
+import Head from 'next/head';
+import Link from 'next/link'
 
 class JacketOff extends React.Component {
 
@@ -77,8 +79,6 @@ class YungeLeanVideo extends React.Component {
 }
 
 class YungLeanButton extends React.Component {
-
-
   render() {
 
     const switchJacketState = () => {
@@ -106,6 +106,27 @@ class YungLeanButton extends React.Component {
   }
 }
 
+class Header extends React.Component {
+
+
+  render() {
+
+    return(<>
+      <div className={styles.header}>
+        <h1>
+          <Link href="/">
+            <a>
+              Dojje
+            </a>
+          </Link>
+
+        </h1>
+      </div>
+    </>)
+
+  }
+}
+
 const JACKET_ON_TEXT = "Put on Jacket";
 const JACKET_OFF_TEXT = "Remove Jacket";
 
@@ -128,21 +149,30 @@ function YungLean() {
   }, [jacketState]);
 
   return(<>
-    <body className={styles.body}></body>
-    <div className={styles.cache_purposes}>
-      this is here so that it can load images from cache
-      <JacketOff />
-      <JacketOn />
-      <JacketRemove />
-      <JacketInstall />
-    </div>
-    <div className={styles.content}>
-      <div className={styles.yungleanVideo}>
-        <YungeLeanVideo jacketState={jacketState} />
-      </div>
-      <YungLeanButton jacketState={jacketState} setJacketState={setJacketState}/>
+    <Head>
+      <title>Yung Leans jacket</title>
+    </Head>
 
-    </div>
+      <div className={styles.cache_purposes}>
+        this is here so that it can load images from cache
+        <JacketOff />
+        <JacketOn />
+        <JacketRemove />
+        <JacketInstall />
+      </div>
+
+      <div className={styles.container}>
+        <Header />
+        <div className={styles.content}>
+
+          <div className={styles.yungleanVideo}>
+            <YungeLeanVideo jacketState={jacketState} />
+          </div>
+          <YungLeanButton jacketState={jacketState} setJacketState={setJacketState}/>
+
+        </div>
+
+      </div>
   </>)
 }
 

@@ -16,6 +16,7 @@ class DaysAlive extends React.Component {
 
 export default function Home() {
   return (<>
+    <body className={styles.body}></body>
     <div className={styles.hero}>
       <div className={styles.middlepart}>
         <div className={styles.pfp}>
@@ -40,10 +41,15 @@ export default function Home() {
     <div className={styles.under}>
       <DaysAlive/>
     </div>
-    {section(
-      "Things i've done", "here are things i have done",
-      <><h3>your mom</h3> </>, styles.stuffdone
-      )}
+
+    <div className={styles.stuffDone}>
+      <h1>Things i have done</h1>
+      <div className={styles.stuffDoneGrid}>
+        <div>
+          <a href="./yunglean/">yung lean</a>
+        </div>
+      </div>
+    </div>
 
     <footer className={styles.footer}>
 

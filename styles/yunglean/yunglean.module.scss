@@ -10,6 +10,14 @@ $backgroundPrimary: #1d1916;
 $contentWidth: 480px;
 $contentHeight: 480px;
 
+.header {
+  width: 100%;
+  padding: 2em;
+  background-color: $backgroundSecondary;
+  
+  color: $textColor;
+}
+
 @mixin yungLeanButton {
   border: 0;
 
@@ -30,33 +38,52 @@ $contentHeight: 480px;
   cursor: pointer;
 }
 
+.container {
+  background-color: #1d1916;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body {
+  overflow: hidden;
+  width: 100%;
+}
+
 .cache_purposes {
   display: none;
 }
 
-.body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+// .body {
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
   
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
   
-  background-color: $backgroundSecondary;
+//   background-color: $backgroundPrimary;
   
-  overflow: hidden;
-}
+//   overflow: hidden;
+// }
 
 
 .content {
-  margin: 100px;
+  width: fit-content;
+
   display: flex;
   flex-direction: column;
 
   max-width: 100%;
   border-collapse: separate;
+
+  margin: auto 0;
 
 }
 
@@ -86,6 +113,8 @@ $contentHeight: 480px;
   background-color: $foregroundPrimaryDark;
   color: $textColorDark;
 }
+
+
 
 @media screen and (max-width: 480px) {    
   .content {
