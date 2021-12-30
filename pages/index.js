@@ -3,17 +3,6 @@ import { useEffect, useState } from "react";
 
 import React from 'react'
 
-class DaysAlive extends React.Component {
-
-  render() {
-    return(<div className={styles.survival}>
-    <p>
-      Daniel has survived {getDaysAlive()}&nbsp;days
-    </p>
-  </div>)
-  }
-}
-
 export default function Home() {
   return (<>
     <body className={styles.body}></body>
@@ -38,9 +27,6 @@ export default function Home() {
       </div>
     </div>
 
-    <div className={styles.under}>
-      <DaysAlive/>
-    </div>
 
     <div className={styles.stuffDone}>
       <h1>Things i have done</h1>
@@ -57,16 +43,6 @@ export default function Home() {
   </>)
 }
 
-function section(header, subheader, content, classname) {
-  return (<>
-    <div className={classname}>
-      <h1>{header}</h1>
-      <h2>{subheader}</h2>
-      {content}
-    </div>
-  </>)
-}
-
 function getDaysAlive() {
   var ms_alive = (Date.now() - Date.parse("29 Jan 2007 GMT +0100"));
   var days_alive = ms_alive / 1000 / 60 / 60 / 24;
@@ -74,6 +50,12 @@ function getDaysAlive() {
   return Math.floor(days_alive);
 }
 
+function getAge() {
+  var ms_alive = (Date.now() - Date.parse("29 Jan 2007 11:27GMT +0100"));
+  var age = ms_alive / 1000 / 60 / 60 / 24 / 365
+  
+  return age
+}
 
 const myLoader = ({ src }) => {
   return `${src}`
