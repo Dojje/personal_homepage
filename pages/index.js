@@ -5,15 +5,15 @@ import React from 'react';
 
 class ThingDone extends React.Component {
   render() {
-    return(<div className={styles.thingDone}>
+    return(<a href={this.props.href} className={styles.thingDone}>
       <div>
         <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
       </div>
       <div>
-        <img src="https://i.ytimg.com/vi/S1cde5JUAuQ/maxresdefault.jpg" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/520632980188954624/930515585966690314/unknown.png" alt="" />
       </div>
-    </div>)
+    </a>)
   }
 }
 
@@ -41,7 +41,7 @@ export default function Home() {
 
       <div className={styles.stuffDone}>
         <h1>Things i have done</h1>
-        <ThingDone title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)">
+        <ThingDone href="/yunglean"title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)">
 
         </ThingDone>
       </div>
