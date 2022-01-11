@@ -154,7 +154,7 @@ function YungLean() {
     </Head>
 
       <div className={styles.cache_purposes}>
-        this is here so that it can load images from cache
+        this is here so that it can load videos from cache
         <JacketOff />
         <JacketOn />
         <JacketRemove />
@@ -162,7 +162,7 @@ function YungLean() {
       </div>
 
       <div className={styles.container}>
-        <Header />
+        {/* <Header /> */}
         <div className={styles.content}>
 
           <div className={styles.yungleanVideo}>
