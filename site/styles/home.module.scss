@@ -4,57 +4,6 @@
   align-items: center;
 }
 
-.hero {
-  background-color: $pb-color;
-
-  width: 100%;
-  height: 55vh;
-  
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.middlepart {
-  height: 70%;
-  background-color: $pf-color;
-  color: $textcolor;
-  margin: auto;
-  padding: 40px;
-  display: flex; 
-  .pfp {
-    aspect-ratio: 1 / 1 !important;
-    height: 100% !important;
-    
-
-    img {
-      height: 100%;
-      width: 100%;
-
-      object-fit: contain;
-    }
-  }
-}
-
-.bio {
-
-  max-width: 50%;
-
-  p {
-    margin: 0; // We only want margin to the left
-    margin-left: 40px;
-    
-    font-size: 64px;
-    font-weight: 300;
-    line-height: 1.2;
-    letter-spacing: -3px;
-
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-
-
-  }
-}
-
 .stuffDone {
   margin-top: 3em;
 
@@ -78,6 +27,7 @@
 }
 
 .thingDone {
+  // Used for a thing that is done
   margin-top: 50px;
 
   width: 60%;
@@ -113,7 +63,6 @@
 }
 
 .footer {
-  height: 200px;
   width: 100%;
 }
 

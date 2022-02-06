@@ -3,42 +3,25 @@ import { useEffect, useState } from "react";
 
 import React from 'react';
 
-class ThingDone extends React.Component {
-  render() {
-    return(<a href={this.props.href} className={styles.thingDone}>
+  function ThingDone({href, title, description}) {
+    return(<a href={href} className={styles.thingDone}>
       <div>
-        <h1>{this.props.title}</h1>
-        <p>{this.props.description}</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </div>
       <div>
         <img src="https://cdn.discordapp.com/attachments/520632980188954624/930515585966690314/unknown.png" alt="" />
       </div>
     </a>)
   }
+
+function Introduction() {
+  
 }
 
 export default function Home() {
   return (<>
     <div className={styles.body}>
-      <div className={styles.hero}>
-        <div className={styles.middlepart}>
-          <div className={styles.pfp}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://i.imgur.com/gbJnQDb.png"
-              width="400"
-              height="400"
-              alt="cool cat pfp"
-            />
-
-          </div>
-
-          <div className={styles.bio}>
-            <p>hey guys</p>
-          </div>
-        </div>
-      </div>
-
       <div className={styles.stuffDone}>
         <h1>Things i have done</h1>
         <ThingDone href="/yunglean"title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)">
