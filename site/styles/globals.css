@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--white);
 }
 
 a {
@@ -15,4 +16,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  /* Color variables */
+  --black: #424656;
+  --white: #ffffff;
+
+  --dominant: #0050b0;
+  --dominant-tint: #3586f0;
+  
+  --compliment: #8f71f3;
+  --accent: #f44072;
+
+
+  /* size variables */
+  --cont: 60%; /* percent of main page */
+  --innr: 70%; /* percent of the --cont variable*/
+
 }

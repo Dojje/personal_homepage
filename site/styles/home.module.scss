@@ -1,18 +1,29 @@
 @import 'colors';
 
-.body {
-  align-items: center;
+.background {
+  width: 100%;
+  background-color: var(--dominant);
+  min-height: 100vh;
 }
 
-.stuffDone {
-  margin-top: 3em;
-
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: var(--cont);
+  background-color: var(--dominant-tint);
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.stuffDoneContainer {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--innr);
 
   h1, h2 {
-
     margin: 0;
     font-weight: 500;
   }
@@ -26,13 +37,27 @@
   }
 }
 
+.stuffDone {
+  height: 300px;
+  overflow-y: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90px;
+    background-image: linear-gradient(180deg, transparent, var(--dominant-tint));
+  }
+}
+
 .thingDone {
   // Used for a thing that is done
   margin-top: 50px;
-
-  width: 60%;
   min-width: min-content;
-  background-color: orange;
+  background-color: var(--accent);
   border-radius: 30px;
   display: flex;
   padding: 30px;

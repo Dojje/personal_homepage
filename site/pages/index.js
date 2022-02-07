@@ -3,37 +3,49 @@ import { useEffect, useState } from "react";
 
 import React from 'react';
 
-  function ThingDone({href, title, description}) {
-    return(<a href={href} className={styles.thingDone}>
-      <div>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </div>
-      <div>
-        <img src="https://cdn.discordapp.com/attachments/520632980188954624/930515585966690314/unknown.png" alt="" />
-      </div>
-    </a>)
-  }
+function ThingDone({href, title, description}) {
+  return(<a href={href} className={styles.thingDone}>
+    <div>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+    <div>
+      <img src="https://cdn.discordapp.com/attachments/520632980188954624/930515585966690314/unknown.png" alt="" />
+    </div>
+  </a>)
+}
 
 function Introduction() {
-  
+  // TODO add contact info
+
+  return (
+    <div>
+      hey guys
+    </div>
+  )
 }
 
 export default function Home() {
-  return (<>
-    <div className={styles.body}>
-      <div className={styles.stuffDone}>
-        <h1>Things i have done</h1>
-        <ThingDone href="/yunglean"title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)">
+  return (
+  <div className={styles.background}>
+    <div className={styles.container}>
 
-        </ThingDone>
+      {Introduction()}
+
+      <div className={styles.stuffDoneContainer}>
+        <h1>Things i have done</h1>
+        <div className={styles.stuffDone}>
+          {/* TODO Add ability to expand*/}
+          <ThingDone href="/yunglean"title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)"/>
+        </div>
       </div>
 
       <footer className={styles.footer}>
 
       </footer>
     </div>
-  </>)
+  </div>
+  )
 }
 
 function getDaysAlive() {
