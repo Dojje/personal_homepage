@@ -20,14 +20,18 @@ a {
 
 :root {
   /* Color variables */
-  --black: #424656;
   --white: #ffffff;
+  --unselected-white: #eee;
+  --dark: #424656;
+  --black: #111;
 
+  --dominant-dark: #000458;
   --dominant: #0050b0;
-  --dominant-tint: #3586f0;
+  --dominant-light: #3586f0;
   
   --compliment: #8f71f3;
   --accent: #f44072;
+  --accent-unselected: #e75174;
 
 
   /* size variables */

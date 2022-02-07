@@ -11,9 +11,11 @@
   flex-direction: column;
   align-items: center;
   width: var(--cont);
-  background-color: var(--dominant-tint);
+  background-color: var(--dominant-light);
   margin: 0 auto;
   min-height: 100vh;
+
+  // TODO make fade effects on sides
 }
 
 .stuffDoneContainer {
