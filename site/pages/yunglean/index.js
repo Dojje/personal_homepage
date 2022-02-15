@@ -165,9 +165,7 @@ function YungLean() {
         {/* <Header /> */}
         <div className={styles.content}>
 
-          <div className={styles.yungleanVideo}>
-            <YungeLeanVideo jacketState={jacketState} />
-          </div>
+          <YungeLeanVideo jacketState={jacketState} />
           <YungLeanButton jacketState={jacketState} setJacketState={setJacketState}/>
 
         </div>
