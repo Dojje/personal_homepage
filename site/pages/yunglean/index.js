@@ -8,7 +8,7 @@ class JacketOff extends React.Component {
   render() {
     return(
       <div className={styles.yungleanVideo}>
-        <video autoplay muted loop playsinline>
+        <video autoPlay muted loop playsInline>
           <source className={styles.yunglean} src="yunglean/mp4/jacket-off.mp4" type="video/mp4"/>
           <source className={styles.yunglean} src="yunglean/webm/jacket-off.webm" type="video/webm"/>
         </video>
@@ -22,7 +22,7 @@ class JacketOn extends React.Component {
   render() {
     return(
       <div className={styles.yungleanVideo}>
-        <video autoplay muted loop playsinline>
+        <video autoPlay muted loop playsInline>
           <source className={styles.yunglean} src="yunglean/mp4/jacket-on.mp4" type="video/mp4"/>
           <source className={styles.yunglean} src="yunglean/webm/jacket-on.webm" type="video/webm"/>
         </video>
@@ -36,7 +36,7 @@ class JacketRemove extends React.Component {
   render() {
     return(
       <div className={styles.yungleanVideo}>
-        <video autoplay muted loop playsinline>
+        <video autoPlay muted loop playsInline>
           <source className={styles.yunglean} src="yunglean/mp4/jacket-remove.mp4" type="video/mp4"/>
           <source className={styles.yunglean} src="yunglean/webm/jacket-remove.webm" type="video/webm"/>
         </video>
@@ -50,7 +50,7 @@ class JacketInstall extends React.Component {
   render() {
     return(
       <div className={styles.yungleanVideo}>
-        <video autoplay muted loop playsinline>
+        <video autoPlay muted loop playsInline>
           <source className={styles.yunglean} src="yunglean/mp4/jacket-install.mp4" type="video/mp4"/>
           <source className={styles.yunglean} src="yunglean/webm/jacket-install.webm" type="video/webm"/>
         </video>
