@@ -25,9 +25,9 @@ a {
   --dark: #424656;
   --black: #111;
 
-  --dominant-dark: #000458;
-  --dominant: #0050b0;
-  --dominant-light: #3586f0;
+  --background-dark: #0e1725;
+  --background: #16253b;
+  --background-light: #0067a5;
   
   --compliment: #8f71f3;
   --accent: #f44072;

@@ -20,7 +20,7 @@ function Introduction() {
 
   return (
     <div>
-      hey guys
+      <p>THIS WEBSITE IS WORK IN PROGRESS</p>
     </div>
   )
 }
@@ -28,8 +28,10 @@ function Introduction() {
 export default function Home() {
   return (
   <div className={styles.background}>
+      {
+        // TODO Header
+      }
     <div className={styles.container}>
-
       {Introduction()}
 
       <div className={styles.stuffDoneContainer}>
