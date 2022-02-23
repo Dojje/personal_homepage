@@ -5,8 +5,8 @@ import React from 'react';
 
 function ThingDone({href, title, description}) {
   return(<a href={href} className={styles.thingDone}>
-    <div>
-      <h1>{title}</h1>
+    <div className={styles.thingDoneDesc}>
+      <h2>{title}</h2>
       <p>{description}</p>
     </div>
     <div>
@@ -15,12 +15,32 @@ function ThingDone({href, title, description}) {
   </a>)
 }
 
-function Introduction() {
+function Header() {
   // TODO add contact info
 
   return (
-    <div>
+    <div className={styles.header}>
       <p>THIS WEBSITE IS WORK IN PROGRESS</p>
+    </div>
+  )
+}
+
+function Introduction() {
+  // TODO add contact info
+
+  const [age, setAge] = useState(getAge());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAge(age => age + 1)
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className={styles.introduction}>
+      <h1>Hello, I am Daniel</h1>
+      <p>I am {age} seconds old</p>
     </div>
   )
 }
@@ -28,17 +48,14 @@ function Introduction() {
 export default function Home() {
   return (
   <div className={styles.background}>
-      {
-        // TODO Header
-      }
-    <div className={styles.container}>
+    <Header/>
+    <div className={styles.content}>
       {Introduction()}
 
       <div className={styles.stuffDoneContainer}>
-        <h1>Things i have done</h1>
+        <h2>Things i have done</h2>
         <div className={styles.stuffDone}>
-          {/* TODO Add ability to expand*/}
-          <ThingDone href="/yunglean"title="Yung Lean Jacket" description="Yung lean jacket btw it only works on computer (rip)"/>
+          <ThingDone href="/yunglean"title="Yung Lean Jacket" description="make yung lean put on and take off his jacket"/>
         </div>
       </div>
 
@@ -58,13 +75,10 @@ function getDaysAlive() {
 }
 
 function getAge() {
-  var ms_alive = (Date.now() - Date.parse("29 Jan 2007 11:27GMT +0100"));
-  var age = ms_alive / 1000 / 60 / 60 / 24 / 365
+  var ms_alive = (Date.now() - Date.parse("29 Jan 2007 11:27 GMT +0100"));
+  var age = Math.round(ms_alive / 1000) // / 60 / 60 / 24 / 365
 
   return age
 }
 
-const myLoader = ({ src }) => {
-  return `${src}`
-}
 
