@@ -4,7 +4,7 @@ $contentHeight: 480px;
 .header {
   width: 100%;
   padding: 2em;
-  background-color: var(--dominant);
+  background-color: var(--background);
   
   color: var(--white);
 }
@@ -30,7 +30,7 @@ $contentHeight: 480px;
 }
 
 .container {
-  background-color: var(--dominant-dark);
+  background-color: var(--background-dark);
   width: 100%;
   height: 100vh;
 
