@@ -24,6 +24,18 @@
 
 }
 
+.under_intro {
+  margin: 20px 0;
+  height: 24px;
+  display: flex;
+  gap: 8px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .stuffDoneContainer {
   margin-top: 3em;
   display: flex;
@@ -92,6 +104,7 @@
   }
 
   a {
+    font-size: 16px;
     margin: 0 10px;
   }
 }
