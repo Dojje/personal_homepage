@@ -22,12 +22,15 @@ function Header() {
       </div>
       <h2>Dojjes personal homepage</h2>
       <div>
+        { /*
+        TODO Fix links for header
         <a href="/blog">
         blog
         </a>
         <a href="/contact">
           contact
         </a>
+        */}
       </div>
     </div>
   )
