@@ -4,15 +4,17 @@ import { useEffect, useState } from "react";
 import React from 'react';
 
 function ThingDone({href, title, description}) {
-  return(<a href={href} className={styles.thingDone}>
+  return(
+  <a href={href} className={styles.thingDone}>
     <div className={styles.thingDoneDesc}>
       <h2>{title}</h2>
       <p>{description}</p>
     </div>
     <div>
-      <img src="https://cdn.discordapp.com/attachments/520632980188954624/930515585966690314/unknown.png" alt="" />
+      <img src="/images/yunglean.png" alt="yung lean standing" />
     </div>
-  </a>)
+  </a>
+  )
 }
 
 function Header() {
@@ -20,7 +22,17 @@ function Header() {
 
   return (
     <div className={styles.header}>
-      <p>THIS WEBSITE IS WORK IN PROGRESS</p>
+      <div>
+      </div>
+      <h2>Dojjes personal homepage</h2>
+      <div>
+        <a href="/blog">
+          blog
+        </a>
+        <a href="/contact">
+          contact
+        </a>
+      </div>
     </div>
   )
 }
@@ -41,6 +53,9 @@ function Introduction() {
     <div className={styles.introduction}>
       <h1>Hello, I am Daniel</h1>
       <p>I am {age} seconds old</p>
+      <div>
+        
+      </div>
     </div>
   )
 }
@@ -58,11 +73,10 @@ export default function Home() {
           <ThingDone href="/yunglean"title="Yung Lean Jacket" description="make yung lean put on and take off his jacket"/>
         </div>
       </div>
-
-      <footer className={styles.footer}>
-
-      </footer>
     </div>
+    <footer className={styles.footer}>
+      hey guys
+    </footer>
   </div>
   )
 }

@@ -14,10 +14,9 @@
   flex-direction: column;
   align-items: center;
   width: var(--cont);
-  margin: 0 auto;
   min-height: 100vh;
+  margin: 80px auto;
   background-color: var(--background);
-  margin-top: 40px;
   border-radius: 40px;
   // min-width: 718px;
   max-width: 100vw !important;
@@ -80,10 +79,32 @@
   width: 100%;
   height: 100px;
   background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 50px;
+
+  h2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+
+  a {
+    margin: 0 10px;
+  }
 }
 
 .introduction {
   width: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: var(--background);
+
 }
 
 @media screen and (max-width: 718px) {  
