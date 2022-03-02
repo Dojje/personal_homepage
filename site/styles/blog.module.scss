@@ -1,0 +1,30 @@
+.blog_post {
+    width: var(--innr);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1em;
+    align-items: center;
+    position: relative;
+    padding: 1em;
+    margin: 0.5em 0;
+
+    &:first-of-type {
+        margin-top: 100px;
+        border-top: 0;
+    }
+
+    &:hover {
+        background-color: var(--background-dark);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-top: 2px solid;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: -0.5em;
+
+    }
+}

@@ -1,5 +1,7 @@
 import styles from '../styles/home.module.scss'
+import all_styles from '../styles/all.module.scss'
 import { useEffect, useState } from "react";
+import Header from '../components/header';
 
 import React from 'react';
 
@@ -10,29 +12,6 @@ function ThingDone({href, title, description, target}) {
       <br/>
       <p>{description}</p>
   </a>
-  )
-}
-
-function Header() {
-  // TODO add contact info
-
-  return (
-    <div className={styles.header}>
-      <div>
-      </div>
-      <h2>Dojjes personal homepage</h2>
-      <div>
-        { /*
-        TODO Fix links for header
-        <a href="/blog">
-        blog
-        </a>
-        <a href="/contact">
-          contact
-        </a>
-        */}
-      </div>
-    </div>
   )
 }
 
@@ -55,9 +34,9 @@ function Introduction() {
 
 export default function Home() {
   return (
-  <div className={styles.background}>
+  <div className={all_styles.background}>
     <Header/>
-    <div className={styles.content}>
+    <div className={all_styles.content}>
       {Introduction()}
 
       <div className={styles.stuffDoneContainer}>
