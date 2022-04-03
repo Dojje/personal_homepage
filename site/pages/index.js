@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 import React from 'react';
 
-function ThingDone({href, title, description}) {
+function ThingDone({href, title, description, target}) {
   return(
-  <a href={href} className={styles.thingDone}>
+  <a href={href} className={styles.thingDone} target={target}>
       <b>{title}</b>
       <br/>
       <p>{description}</p>
@@ -75,7 +75,8 @@ export default function Home() {
       <div className={styles.stuffDoneContainer}>
         <h2>Things i have done</h2>
         <div className={styles.stuffDone}>
-          <ThingDone href="/yunglean"title="Yung Lean Jacket" description="make yung lean put on and take off his jacket"/>
+          <ThingDone href="/yunglean"title="Yung Lean Jacket" description="make yung lean put on and take off his jacket" target="_self"/>
+          <ThingDone href="https://dojje.github.io/more-globle"title="More Globle" description="Play the game globle how many times you want" target="_blank"/>
         </div>
       </div>
     </div>
