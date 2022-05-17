@@ -33,10 +33,9 @@ export default function Blog({initialLang}) {
         }
     });
 
-    useEffect(() => {
-        console.log("heer");
-        Cookie.set("lang", lang, {expires: 356, sameSite: "strict"});
-    }, [lang])
+
+
+
 
 
     let posts = [TunnelbaneRace];
