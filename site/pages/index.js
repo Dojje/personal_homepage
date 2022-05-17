@@ -2,6 +2,7 @@ import styles from '../styles/home.module.scss'
 import all_styles from '../styles/all.module.scss'
 import { useEffect, useState } from "react";
 import Page from '../components/page';
+import parseCookies from '../helpers/parseCookies';
 
 import React from 'react';
 
@@ -32,9 +33,11 @@ function Introduction() {
   )
 }
 
-export default function Home() {
+export default function Home({initialLang}) {
+  const [lang, setLang] = useState(initialLang);
+
   return (
-    <Page>
+    <Page lang={lang} setLang={setLang}>
       {Introduction()}
 
       <div className={styles.stuffDoneContainer}>
@@ -48,3 +51,12 @@ export default function Home() {
 
   )
 }
+
+Home.getInitialProps = ({ req }) => {
+    const cookies = parseCookies(req);
+
+    return {
+        initialLang: cookies.lang || "en"
+    }
+}
+
