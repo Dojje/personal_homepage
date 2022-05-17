@@ -25,18 +25,7 @@ function BlogPost({name, time, id}) {
 
 export default function Blog({initialLang}) {
     console.log(initialLang)
-    const [lang, setLang] = useState(() => {
-        if (initialLang === undefined) {
-            return "en"
-        } else {
-            return initialLang
-        }
-    });
-
-
-
-
-
+    const [lang, setLang] = useState(initialLang);
 
     let posts = [TunnelbaneRace];
 
@@ -45,7 +34,7 @@ export default function Blog({initialLang}) {
     });
 
     return (
-    <Page initialLang={initialLang} lang={lang} setLang={setLang}>
+    <Page lang={lang} setLang={setLang}>
         {
             valid_posts.map(post => {
                 let post_manifest = new post().manifest();
