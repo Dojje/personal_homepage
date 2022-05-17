@@ -34,24 +34,10 @@ export default function Blog({initialLang}) {
     });
 
     useEffect(() => {
+        console.log("heer");
         Cookie.set("lang", lang, {expires: 356, sameSite: "strict"});
     }, [lang])
 
-    let getLang = () => {
-        if (lang === "sv") {
-            return "english"
-        } else if (lang === "en") {
-            return "swedish"
-        }
-    }
-    
-    let switchLang = () => {
-        if (lang === "sv") {
-            setLang("en")
-        } else if (lang === "en") {
-            setLang("sv")
-        }
-    }
 
     let posts = [TunnelbaneRace];
 
@@ -60,16 +46,7 @@ export default function Blog({initialLang}) {
     });
 
     return (
-    <Page>
-        <button 
-            style={{
-                fontSize: "24px",
-                marginLeft: "auto",
-            }}
-            onClick={switchLang}
-            >
-            {getLang()}
-        </button>
+    <Page initialLang={initialLang} lang={lang} setLang={setLang}>
         {
             valid_posts.map(post => {
                 let post_manifest = new post().manifest();

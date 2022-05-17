@@ -1,12 +1,16 @@
+import parseCookies from '../helpers/parseCookies'
 import all_styles from '../styles/all.module.scss'
 import Header from './header'
 
-export default function Page(props) {
+export default function Page({children, initialLang, lang, setLang}) {
+
+
+    console.log("lang", initialLang)
     return (<div className={all_styles.background}>
-        <Header/>
+        <Header lang={lang} setLang={setLang} />
         <div className={all_styles.content}>
             <div className={all_styles.inner}>
-                {props.children}
+                {children}
             </div>
         </div>
     </div>
