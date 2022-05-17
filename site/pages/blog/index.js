@@ -3,6 +3,7 @@ import all_styles from '../../styles/all.module.scss'
 import styles from '../../styles/blog.module.scss'
 import moment, { lang } from 'moment'
 import { useRouter } from 'next/router'
+import Page from '../../components/page';
 
 import { useState, useEffect } from 'react';
 import TunnelbaneRace from './subway-race';
@@ -60,31 +61,23 @@ export default function Blog() {
     });
 
     return (
-    <div className={all_styles.background}>
-        <Header/>
-        <div className={all_styles.content}>
-            <div
-                style={{
-                    width: "80%",
-                }}
-            >
-
-                    <button 
-                        style={{
-                            fontSize: "24px",
-                            marginLeft: "auto",
-                        }}
-                        onClick={switchLang}>
-                    {getLang()}</button>
-                {
-                    valid_posts.map(post => {
-                        let post_manifest = new post().manifest();
-                        return <BlogPost id={post_manifest.id} name={post_manifest.name[lang]} time={post_manifest.time}/>
-                    })
-                }
-            </div>
-        </div>
-    </div>
+    <Page>
+        <button 
+            style={{
+                fontSize: "24px",
+                marginLeft: "auto",
+            }}
+            onClick={switchLang}
+        >
+            {getLang()}
+        </button>
+        {
+            valid_posts.map(post => {
+                let post_manifest = new post().manifest();
+                return <BlogPost id={post_manifest.id} name={post_manifest.name[lang]} time={post_manifest.time}/>
+            })
+        }
+    </Page>
     )
 }
 
