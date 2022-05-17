@@ -1,6 +1,6 @@
 import styles from '../styles/home.module.scss'
 
-export default function Header() {
+const Header = () => {
   return (
     <div className={styles.header} >
       <a href="/">
@@ -20,3 +20,4 @@ export default function Header() {
     </div>
   )
 }
+export default Header;
