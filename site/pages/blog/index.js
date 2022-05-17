@@ -1,8 +1,9 @@
 import styles from '../../styles/blog.module.scss'
-import moment, { lang } from 'moment'
-import { useRouter } from 'next/router'
+import moment from 'moment'
 import Page from '../../components/page';
-import { useCookies } from "react-cookie"
+import Cookie from 'js-cookie'
+import cookie from "cookie"
+import parseCookies from '../../helpers/parseCookies';
 
 import { useState, useEffect } from 'react';
 import TunnelbaneRace from './subway-race';
@@ -22,36 +23,37 @@ function BlogPost({name, time, id}) {
     )
 }
 
-export default function Blog() {
-    let router = useRouter()
-    
-
-    let lang = "en";
-    if (process.browser) {
-        if (router.query.lang !== undefined) {
-            lang = router.query.lang;
+export default function Blog({initialLang}) {
+    console.log(initialLang)
+    const [lang, setLang] = useState(() => {
+        if (initialLang === undefined) {
+            return "en"
         } else {
-            router.push("/blog/?lang=en")
+            return initialLang
+        }
+    });
+
+    useEffect(() => {
+        Cookie.set("lang", lang, {expires: 356, sameSite: "strict"});
+    }, [lang])
+
+    let getLang = () => {
+        if (lang === "sv") {
+            return "english"
+        } else if (lang === "en") {
+            return "swedish"
+        }
+    }
+    
+    let switchLang = () => {
+        if (lang === "sv") {
+            setLang("en")
+        } else if (lang === "en") {
+            setLang("sv")
         }
     }
 
     let posts = [TunnelbaneRace];
-
-    let getLang = () => {
-        if (lang === "sv") {
-            return "english 🇬🇧"
-        } else if (lang === "en") {
-            return "swedish 🇸🇪"
-        }
-    }
-
-    let switchLang = () => {
-        if (lang === "sv") {
-            router.push("/blog/?lang=en")
-        } else if (lang === "en") {
-            router.push("/blog/?lang=sv")
-        }
-    }
 
     let valid_posts = posts.filter(post => {
         return new post().manifest().languages.includes(lang)
@@ -65,7 +67,7 @@ export default function Blog() {
                 marginLeft: "auto",
             }}
             onClick={switchLang}
-        >
+            >
             {getLang()}
         </button>
         {
@@ -78,3 +80,10 @@ export default function Blog() {
     )
 }
 
+Blog.getInitialProps = ({ req }) => {
+    const cookies = parseCookies(req);
+
+    return {
+        initialLang: cookies.lang || "en"
+    }
+}
