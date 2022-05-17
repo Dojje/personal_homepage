@@ -35,6 +35,16 @@ h2 {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+  border-style: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: var(--dark);
+  color: var(--white);
+
+}
+
 :root {
   /* Color variables */
   --white: #dff1ff;
