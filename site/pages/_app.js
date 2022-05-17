@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import { CookiesProvider } from "react-cookie"
 
 function MyApp({ Component, pageProps }) {
   return(<>
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }) {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   </Head>
   {/* will use this head as standard */}
-  <Component {...pageProps} />
+  <CookiesProvider>
+    <Component {...pageProps} />
+  </CookiesProvider>
   </>)
 }
 

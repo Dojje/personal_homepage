@@ -2,10 +2,10 @@ import styles from '../styles/home.module.scss'
 
 export default function Header() {
   return (
-    <div className={styles.header}>
-      <div>
-      </div>
-      <h2>Dojjes personal homepage</h2>
+    <div className={styles.header} >
+      <a href="/">
+        <h2>Dojjes personal homepage</h2>
+      </a>
       <div>
         { /*
         TODO Fix links for header

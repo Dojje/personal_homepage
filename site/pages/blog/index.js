@@ -1,9 +1,8 @@
-import Header from '../../components/header';
-import all_styles from '../../styles/all.module.scss'
 import styles from '../../styles/blog.module.scss'
 import moment, { lang } from 'moment'
 import { useRouter } from 'next/router'
 import Page from '../../components/page';
+import { useCookies } from "react-cookie"
 
 import { useState, useEffect } from 'react';
 import TunnelbaneRace from './subway-race';
@@ -25,22 +24,20 @@ function BlogPost({name, time, id}) {
 
 export default function Blog() {
     let router = useRouter()
+    
 
-    const [lang, setLang] = useState("en");
-
-    useEffect(() => {
-        if (router.query.lang === undefined) {
-            setLang("en");
-
+    let lang = "en";
+    if (process.browser) {
+        if (router.query.lang !== undefined) {
+            lang = router.query.lang;
         } else {
-            setLang(router.query.lang);
+            router.push("/blog/?lang=en")
         }
-    }, [router.query.lang])
+    }
 
     let posts = [TunnelbaneRace];
 
     let getLang = () => {
-        console.log(lang)
         if (lang === "sv") {
             return "english 🇬🇧"
         } else if (lang === "en") {
@@ -50,9 +47,9 @@ export default function Blog() {
 
     let switchLang = () => {
         if (lang === "sv") {
-            setLang("en")
+            router.push("/blog/?lang=en")
         } else if (lang === "en") {
-            setLang("sv")
+            router.push("/blog/?lang=sv")
         }
     }
 
