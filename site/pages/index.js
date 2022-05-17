@@ -1,7 +1,7 @@
 import styles from '../styles/home.module.scss'
 import all_styles from '../styles/all.module.scss'
 import { useEffect, useState } from "react";
-import Header from '../components/header';
+import Page from '../components/page';
 
 import React from 'react';
 
@@ -34,9 +34,7 @@ function Introduction() {
 
 export default function Home() {
   return (
-  <div className={all_styles.background}>
-    <Header/>
-    <div className={all_styles.content}>
+    <Page>
       {Introduction()}
 
       <div className={styles.stuffDoneContainer}>
@@ -46,12 +44,7 @@ export default function Home() {
           <ThingDone href="https://dojje.github.io/more-globle"title="More Globle" description="Play the game globle how many times you want" target="_blank"/>
         </div>
       </div>
-    </div>
-    { /*
-    <footer className={styles.footer}>
-      hey guys
-    </footer>
-    */ }
-  </div>
+    </Page>
+
   )
 }
