@@ -1,15 +1,17 @@
 import styles from '../styles/home.module.scss'
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 
 function LinkButton({lang, href, text}) {
+  const router = useRouter()
   return (
     <a href={href}>
       <button style={{
         fontSize: "24px",
         marginLeft: "auto",
         padding: "10px 15px",
-        backgroundColor: "var(--accent)",
+        backgroundColor: router.asPath === href ? "var(--accent-unselected)" : "var(--accent)",
       }}>
         {text}
       </button>
