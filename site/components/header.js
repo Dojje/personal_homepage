@@ -29,7 +29,7 @@ const Header = ({lang, setLang}) => {
   return (
     <div className={styles.header} >
       <a href="/">
-        <h2>Dojjes personal homepage</h2>
+        <h2>{lang == "en" ? "dojjes personal homepage" : "dojjes hemsida"}</h2>
       </a>
         <button 
             style={{
@@ -52,4 +52,5 @@ const Header = ({lang, setLang}) => {
     </div>
   )
 }
+
 export default Header;
