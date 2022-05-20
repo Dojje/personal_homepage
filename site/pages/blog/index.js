@@ -6,7 +6,7 @@ import cookie from "cookie"
 import parseCookies from '../../helpers/parseCookies';
 
 import { useState, useEffect } from 'react';
-import TunnelbaneRace from './subway-race';
+import TunnelbaneRace from '../../blogposts/subway-race';
 
 function BlogPost({name, time, id}) {
     let postDate = moment.unix(time)

@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "../../components/page";
+import Page from "../components/page";
 
 export default class TunnelbaneRace extends React.Component {
     constructor() {
@@ -7,22 +7,9 @@ export default class TunnelbaneRace extends React.Component {
     }
 
     render() {
-        let lang = "sv"
-
-        if (lang == "sv"){
-            return (
-                <Page>
-                    <h2>Tunnelbanerace</h2>
-                </Page>
-            )
-        } else if (lang == "en") {
-            return (
-                <Page>
-                    <h2></h2>
-                </Page>
-            )
-        }
-
+        return (
+            <h1>hey guys</h1>
+        )
     }
 
     manifest() {
