@@ -60,7 +60,13 @@ export default class TunnelbaneRace extends React.Component {
                 <li>västra skogen</li>
                 <li>hjulsta</li>
                 <li>akalla</li>
+                <li>rådhuset</li>
+                <li>odenplan</li>
             </ol>
+            <p>
+                anledningen till att rådhuset och odenplan finns med är att det finns två vägar mellan tc och fridhemsplan.
+                Mitt datorprogram kan inte se skillnad mellan blå linje och grön linje så det här är det bästa sättet att skilja dem.
+            </p>
 
             <p>
                 Planen gick ut på att hitta bästa vägen mellan dem. Detta är ett matematiskt problem som kallas&nbsp;
@@ -77,14 +83,14 @@ export default class TunnelbaneRace extends React.Component {
                 Plan 3 bygger på plan 2, fast så att det funkar. Det är ett datorprogram som går igenom alla nyckelstationer på ett rimligt sätt.
             </p>
             <p>
-                Först börjar man på en slutstation. Sen simulerar man att man åker till alla grannstationer genom SL:s reseplanerare. Detta gör man i rondor.
-                Vi tar mörby centrum som ett exempel
+                Först börjar man på hässelby strand eller norsborg. Sen simulerar man att man åker till alla grannstationer genom SL:s reseplanerare. Detta gör man i rondor.
+                Vi tar norsborg som ett exempel
                 <br />
             </p>
             <ul>
-                <li>Man börjar på mörby centrum</li>
-                <li>Man simulerar att man åker till östermalmstorg</li>
-                <li>På östermalmstorg finns det tre grannstationer, de är mörby, ropsten och tc. Så man simulerar att man åker till alla de tre. Då har man 3 olika vägar totalt.</li>
+                <li>Man börjar på norsborg</li>
+                <li>Man simulerar att man åker till liljeholmen</li>
+                <li>Liljeholmen har tre grannstationer. Norsborg, fruängen och slussen. Så man simulerar att man åker till alla de tre. Då har man 3 olika vägar totalt.</li>
                 <li>Sen fortsätter man genom att simulera att åka till de tre vägarna och ta alla deras grannar.</li>
                 <li>Detta gör man tills en väg har tagit alla nyckelstationer</li>
             </ul>
@@ -120,6 +126,12 @@ export default class TunnelbaneRace extends React.Component {
                 <li>fruängen ↔ skarpnäck</li>
                 <li>odenplan ↔ ropsten</li>
             </ul>
+            <h5>Början och slut</h5>
+            <p>
+                Jag simulerar bara början och slut med hässelby strand och norsborg.
+                Det skulle inte vara någon idé att åka de långa sträckorna bara för att sedan åka tillbaks.
+                Detta kortar ner körtiden av mitt program till ca. 2 timmar.
+            </p>
             </>
         )
     }
@@ -133,7 +145,7 @@ export default class TunnelbaneRace extends React.Component {
                     sv: "tunnelbanerace"
                 },
                 id: "subway-race",
-                time: "1652797830",
+                time: "1653084744",
             }
         )
     }
