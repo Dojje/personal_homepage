@@ -13,10 +13,13 @@ export default class TunnelbaneRace extends React.Component {
             <p>Tunnelbaneracet går ut på att ta sig till stockholms alla tunnelbanestationer på så kort tid som möjligt.</p>
 
             <h3>Inspiration</h3>
-            <p>En vacker dag ploppade <a style={{color: "#0ff", textDecoration: "underline"}} href="https://www.youtube.com/watch?v=6jxmgdgeDCY">den här</a> videon upp i mitt youtubeflöde</p>
+            <p>En vacker dag ploppade
+                <a style={{color: "#0ff", textDecoration: "underline"}} href="https://www.youtube.com/watch?v=6jxmgdgeDCY">den här</a>
+                videon upp i mitt youtubeflöde</p>
             <p>
                 Det är en video där en kille och hans vänner tar sig till alla tunnelbanestationer i stockholm på kortast tid.
-                När jag såg den tänkte jag att jag skulle kunna försöka med samma grej, det passar ju bra att göra den i sommar för att då får jag och mina vänner gröna gratiskort av sl.
+                När jag såg den tänkte jag att jag skulle kunna försöka med samma grej,
+                det passar ju bra att göra den i sommar för att då får jag och mina vänner gratis sommarlovskort av sl.
             </p>
 
             <h3>Vägen</h3>
@@ -132,6 +135,11 @@ export default class TunnelbaneRace extends React.Component {
                 Det skulle inte vara någon idé att åka de långa sträckorna bara för att sedan åka tillbaks.
                 Detta kortar ner körtiden av mitt program till ca. 2 timmar.
             </p>
+            <h5>Källkod</h5>
+            <p>
+                Du hittar källkoden till programmet&nbsp;
+                <a style={{color: "#0ff", textDecoration: "underline"}} href="https://github.com/dojje/tunnelbanerace">här</a>.
+            </p>
             </>
         )
     }
@@ -145,7 +153,8 @@ export default class TunnelbaneRace extends React.Component {
                     sv: "tunnelbanerace"
                 },
                 id: "subway-race",
-                time: "1653084744",
+                lastEdited: "1653084744",
+                published: "1653084744"
             }
         )
     }

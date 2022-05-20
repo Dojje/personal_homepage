@@ -42,7 +42,7 @@ export default function Blog({initialLang}) {
         {
             valid_posts.map(post => {
                 let post_manifest = new post().manifest();
-                return <BlogPost id={post_manifest.id} name={post_manifest.name[lang]} time={post_manifest.time}/>
+                return <BlogPost id={post_manifest.id} name={post_manifest.name[lang]} time={post_manifest.lastEdited}/>
             })
         }
     </Page>
