@@ -15,7 +15,6 @@ function BlogPost({ initialLang }) {
         if (post_manifest.id == postname) {
             return (
                 <Page lang={lang} setLang={setLang}>
-                    <h1>sdf</h1>
                     <Post/>
                 </Page>
             )
