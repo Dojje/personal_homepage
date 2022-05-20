@@ -16,7 +16,11 @@ function BlogPost({name, time, id}) {
             <b>
                 {name}
             </b>
-            <p>
+            <p
+                style={{
+                    margin: "0",
+                }}
+            >
                 {postDate.format("YYYY-MM-DD HH:MM")}
             </p>
         </a>

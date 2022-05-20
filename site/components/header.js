@@ -55,8 +55,11 @@ const Header = ({lang, setLang}) => {
       <div>
         <LinkButton text={lang === "en" ? "blog" : "blogg"} href="/blog" />
       </div>
-      <a href="/">
-        <h2>{lang == "en" ? "dojjes personal homepage" : "dojjes hemsida"}</h2>
+      <a href="/" style={{
+        color: "var(--white)",
+        fontSize: "36px",
+      }}>
+        {lang == "en" ? "dojjes personal homepage" : "dojjes hemsida"}
       </a>
       <button 
         style={{
