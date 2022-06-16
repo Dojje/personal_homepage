@@ -13,9 +13,9 @@ export default class TunnelbaneRace extends React.Component {
             <p>Tunnelbaneracet går ut på att ta sig till stockholms alla tunnelbanestationer på så kort tid som möjligt.</p>
 
             <h3>Inspiration</h3>
-            <p>En vacker dag ploppade
+            <p>En vacker dag ploppade &nbsp;
                 <a style={{color: "#0ff", textDecoration: "underline"}} href="https://www.youtube.com/watch?v=6jxmgdgeDCY">den här</a>
-                videon upp i mitt youtubeflöde</p>
+                &nbsp;videon upp i mitt youtubeflöde</p>
             <p>
                 Det är en video där en kille och hans vänner tar sig till alla tunnelbanestationer i stockholm på kortast tid.
                 När jag såg den tänkte jag att jag skulle kunna försöka med samma grej,
@@ -68,7 +68,7 @@ export default class TunnelbaneRace extends React.Component {
             </ol>
             <p>
                 anledningen till att rådhuset och odenplan finns med är att det finns två vägar mellan tc och fridhemsplan.
-                Mitt datorprogram kan inte se skillnad mellan blå linje och grön linje så det här är det bästa sättet att skilja dem.
+                de är för att separera vägarna. Då är det bara att vara på varje väg
             </p>
 
             <p>
@@ -124,17 +124,18 @@ export default class TunnelbaneRace extends React.Component {
             </p>
             <ul>
                 <li>akalla ↔ hjulsta</li>
-                <li>fruängen ↔ hagsätra</li>
-                <li>fruängen ↔ farsta strand</li>
-                <li>fruängen ↔ skarpnäck</li>
+                <li>fruängen ↔ älvsjö</li>
+                <li>älvsjö ↔ hagsätra</li>
+                <li>älvsjö ↔ farsta strand</li>
+                <li>älvsjö ↔ skarpnäck</li>
                 <li>odenplan ↔ ropsten</li>
             </ul>
             <h5>Början och slut</h5>
             <p>
-                Jag simulerar bara början och slut med hässelby strand och norsborg.
-                Det skulle inte vara någon idé att åka de långa sträckorna bara för att sedan åka tillbaks.
-                Detta kortar ner körtiden av mitt program till ca. 2 timmar.
+                jag räknar bara med hässelby strand och norsborg som ställen man kan börja och sluta på.
             </p>
+            <h5>Resultat</h5>
+            <table class="table table-bordered table-hover table-condensed"><thead><tr><th title="Field #1">avgångsplats</th><th title="Field #2">destination</th><th title="Field #3">linje</th><th title="Field #4">avgångstid</th><th title="Field #5">tid där</th><th title="Field #6">färdtid</th><th title="Field #7">väntetid innan</th><th title="Field #8">kommentar</th></tr></thead><tbody><tr><td>hässelby strand</td><td>fridhemsplan</td><td>19</td><td>10:07</td><td>10:32</td><td>25min</td><td>0min</td><td> </td></tr><tr><td>fridhemsplan</td><td>rådhuset</td><td>11</td><td>10:33</td><td>10:35</td><td>2min</td><td>1min</td><td> </td></tr><tr><td>rådhuset</td><td>t-centralen</td><td>11</td><td>10:35</td><td>10:37</td><td>2min</td><td>0min</td><td> </td></tr><tr><td>t-centralen</td><td>kungsträdgården</td><td>11</td><td>10:37</td><td>10:39</td><td>2min</td><td>0min</td><td> </td></tr><tr><td>kungsträdgården</td><td>t-centralen</td><td>11</td><td>10:39</td><td>10:40</td><td>1min</td><td>0min</td><td> </td></tr><tr><td>t-centralen</td><td>odenplan</td><td>43</td><td>10:41</td><td>10:43</td><td>2min</td><td>1min</td><td> </td></tr><tr><td>odenplan</td><td>fridhemsplan</td><td>17</td><td>10:44</td><td>10:47</td><td>3min</td><td>1min</td><td> </td></tr><tr><td>fridhemsplan</td><td>västra skogen</td><td>10</td><td>10:48</td><td>10:52</td><td>4min</td><td>1min</td><td> </td></tr><tr><td>västra skogen</td><td>hjulsta</td><td>10</td><td>10:52</td><td>11:06</td><td>14min</td><td>0min</td><td> </td></tr><tr><td>hjulsta</td><td>akalla</td><td>517</td><td>11:10</td><td>11:22</td><td>12min</td><td>4min</td><td> </td></tr><tr><td>akalla</td><td>västra skogen</td><td>11</td><td>11:26</td><td>11:40</td><td>14min</td><td>4min</td><td> </td></tr><tr><td>västra skogen</td><td>fridhemsplan</td><td>11</td><td>11:40</td><td>11:43</td><td>3min</td><td>0min</td><td> </td></tr><tr><td>fridhemsplan</td><td>odenplan</td><td>18</td><td>11:46</td><td>11:49</td><td>3min</td><td>3min</td><td>långt fram i tåget</td></tr><tr><td>odenplan</td><td>ropsten</td><td>6</td><td>11:50</td><td>12:10</td><td>20min</td><td>1min</td><td>spring frammåt i tågets riktning buss 6 avgår på själva odenplan</td></tr><tr><td>ropsten</td><td>östermalmstorg</td><td>13</td><td>12:13</td><td>12:19</td><td>6min</td><td>3min</td><td> </td></tr><tr><td>östermalmstorg</td><td>mörby centrum</td><td>14</td><td>12:23</td><td>12:35</td><td>12min</td><td>4min</td><td> </td></tr><tr><td>mörby centrum</td><td>östermalmstorg</td><td>14</td><td>12:40</td><td>12:52</td><td>12min</td><td>5min</td><td> </td></tr><tr><td>östermalmstorg</td><td>t-centralen</td><td>14</td><td>12:52</td><td>12:56</td><td>4min</td><td>0min</td><td>byt till grön linje</td></tr><tr><td>t-centralen</td><td>slussen</td><td>14</td><td>12:56</td><td>12:59</td><td>3min</td><td>0min</td><td>byt till grön linje</td></tr><tr><td>slussen</td><td>gullmarsplan</td><td>17</td><td>13:01</td><td>13:07</td><td>6min</td><td>2min</td><td> </td></tr><tr><td>gullmarsplan</td><td>skärmarbrink</td><td>17</td><td>13:07</td><td>13:08</td><td>1min</td><td>0min</td><td> </td></tr><tr><td>skärmarbrink</td><td>skarpnäck</td><td>17</td><td>13:08</td><td>13:18</td><td>10min</td><td>0min</td><td> </td></tr><tr><td>skarpnäck</td><td>skärmarbrink</td><td>17</td><td>13:20</td><td>13:28</td><td>8min</td><td>2min</td><td> </td></tr><tr><td>skärmarbrink</td><td>farsta strand</td><td>18</td><td>13:35</td><td>13:48</td><td>13min</td><td>7min</td><td> </td></tr><tr><td>farsta strand</td><td>älvsjö station</td><td>43 (norr)</td><td>13:54</td><td>14:00</td><td>6min</td><td>6min</td><td>byt till pendeltåg</td></tr><tr><td>älvsjö station</td><td>hagsätra</td><td>143</td><td>14:10</td><td>14:21</td><td>11min</td><td>10min</td><td>byt till buss</td></tr><tr><td>hagsätra</td><td>gullmarsplan</td><td>19</td><td>14:32</td><td>14:46</td><td>14min</td><td>11min</td><td>byt till tub</td></tr><tr><td>gullmarsplan</td><td>slussen</td><td>19</td><td>14:46</td><td>14:52</td><td>6min</td><td>0min</td><td> </td></tr><tr><td>slussen</td><td>liljeholmen</td><td>14</td><td>14:53</td><td>15:00</td><td>7min</td><td>1min</td><td>byt till röd (annan våning)</td></tr><tr><td>liljeholmen</td><td>fruängen</td><td>14</td><td>15:00</td><td>15:09</td><td>9min</td><td>0min</td><td> </td></tr><tr><td>fruängen</td><td>liljeholmen</td><td>14</td><td>15:10</td><td>15:18</td><td>8min</td><td>1min</td><td> </td></tr><tr><td>liljeholmen</td><td>norsborg</td><td>13</td><td>15:24</td><td>15:51</td><td>27min</td><td>6min</td><td> </td></tr></tbody></table>
             <h5>Källkod</h5>
             <p>
                 Du hittar källkoden till programmet&nbsp;
