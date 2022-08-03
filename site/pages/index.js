@@ -3,6 +3,10 @@ import all_styles from '../styles/all.module.scss'
 import { useEffect, useState } from "react";
 import Page from '../components/page';
 import parseCookies from '../helpers/parseCookies';
+import cookieCutter from 'cookie-cutter'
+import { getCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
+
 
 import React from 'react';
 
@@ -33,8 +37,19 @@ function Introduction({lang}) {
   )
 }
 
-export default function Home({initialLang}) {
+export default function Home() {
+
+  let initialLang = getCookie('lang');
+  if (initialLang === undefined) {
+    setCookie('lang', 'en');
+  }
   const [lang, setLang] = useState(initialLang);
+
+  useEffect(() => {
+    setCookie('lang', lang);
+
+  }, [lang])
+
 
   return (
     <Page lang={lang} setLang={setLang}>
@@ -61,12 +76,3 @@ export default function Home({initialLang}) {
 
   )
 }
-
-Home.getInitialProps = ({ req }) => {
-    const cookies = parseCookies(req);
-
-    return {
-        initialLang: cookies.lang || "en"
-    }
-}
-
