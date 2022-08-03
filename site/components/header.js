@@ -38,11 +38,6 @@ const Header = ({lang, setLang}) => {
     }
   }
 
-  useEffect(() => {
-      console.log("heer");
-      Cookie.set("lang", lang, {expires: 356, sameSite: "strict"});
-  }, [lang])
-
   return (
     <div style={{
       width: "100%",
