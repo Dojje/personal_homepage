@@ -53,7 +53,7 @@ const Header = ({lang, setLang}) => {
       gridTemplateColumns: "1fr auto 1fr",
     }} >
       <div>
-        <LinkButton text={lang === "en" ? "blog" : "blogg"} href="/blog" />
+        {/*<LinkButton text={lang === "en" ? "blog" : "blogg"} href="/blog" />*/}
       </div>
       <a href="/" style={{
         color: "var(--white)",
