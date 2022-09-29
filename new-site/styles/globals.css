@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color variables */
+  --accent-unselected: #1C5E52;
+  --foreground: #6200ff;
+  --background: #262a2f;
+  --background-base: #191b1f;
+  --text-light: rgb(241, 255, 255);
+
+  /* size variables */
+  --cont: 60%; /* percent of main page */
+  --innr: 80%; /* percent of the --cont variable*/
+
+}
