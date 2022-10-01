@@ -32,6 +32,7 @@ export default function Page({children}) {
             borderRadius: "40px",
             padding: "40px",
             background: "var(--background)",
+            minHeight: "100vh"
           }}>
             {children}
           </div>
