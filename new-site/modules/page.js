@@ -53,7 +53,7 @@ export default function Page({children, setLang, lang}) {
             height: "auto",
             marginTop: "40px",
             borderRadius: "40px",
-            padding: "60px",
+            padding: "5%",
             background: "var(--background)",
             minHeight: "100vh"
           }}>
